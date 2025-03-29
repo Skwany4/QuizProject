@@ -3,6 +3,7 @@ import "../styles/auth.css";
 
 function Register() {
   return (
+    <div className="auth-body">
     <div className="auth-container">
       <h2>Rejestracja</h2>
       <form>
@@ -13,6 +14,7 @@ function Register() {
         <button type="submit">Zarejestruj</button>
       </form>
       <p>Masz już konto? <Link to="/login">Zaloguj się</Link></p>
+    </div>
     </div>
   );
 }
