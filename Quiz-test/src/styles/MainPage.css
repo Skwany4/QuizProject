@@ -12,34 +12,46 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+  height: 40%;
+  }
 
-.nav-buttons {
-  display: flex;  /* Ustawienie przycisków w jednym rzędzie */
-  gap: 10px; /* Odstęp między przyciskami */
-  flex-grow: 1;
-}
+  .nav-buttons {
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+  }
 
-.nav-buttons button {
-  background-color: #ddd;
-  color: black;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+  .nav-buttons button {
+    background-color: #ddd;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
-.nav-buttons button:hover {
-  background-color: #bbb;
-}
+  .nav-buttons button:hover {
+    background-color: #bbb;
+  }
 
-.user-icon {
-  font-size: 24px;
+  .user-icon {
+    font-size: 24px;
+  }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolumny */
+  grid-template-rows: repeat(4, auto); /* 4 rzędy */
+  gap: 20px;
+  padding: 20px;
+  background-color: #d3d3d3;
+  justify-items: center;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 kolumny */
+  grid-template-rows: repeat(4, auto); /* 4 rzędy */
   gap: 20px;
   padding: 20px;
   background-color: #d3d3d3;
@@ -50,6 +62,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
 .category-card img {
@@ -58,6 +71,23 @@ html, body {
   border: 2px solid black;
   border-radius: 50%;
 }
+
+.category-button {
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+  background-color: #3C6E71;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-button:hover {
+  background-color: #284B63;
+}
+
 
 .category-card p {
   margin-top: 10px;

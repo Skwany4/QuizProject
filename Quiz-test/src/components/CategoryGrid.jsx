@@ -13,19 +13,21 @@ const categories = [
   { id: 10, name: "Kategoria", img: "Category.png" },
   { id: 11, name: "Kategoria", img: "Category.png" },
   { id: 12, name: "Kategoria", img: "Category.png" },
-  { id: 13, name: "Kategoria", img: "Category.png" },
-  { id: 14, name: "Kategoria", img: "Category.png" },
-  { id: 15, name: "Kategoria", img: "Category.png" },
-  { id: 16, name: "Kategoria", img: "Category.png" },
 ];
 
 function CategoryGrid() {
+  const handleCategoryClick = (category) => {
+    console.log(`Wybrano kategorię: ${category.name}`);
+  };
+
   return (
     <div className="grid-container">
       {categories.map((category) => (
         <div key={category.id} className="category-card">
           <img src={`/public/${category.img}`} alt={category.name} />
-          <p>{category.name}</p>
+          <button onClick={() => handleCategoryClick(category)} className="category-button">
+            {category.name}
+          </button>
         </div>
       ))}
     </div>
