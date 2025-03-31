@@ -1,5 +1,10 @@
-.auth-body {
+body {
+  margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
+}
+
+.auth-body {
   height: 100vh;
   margin: 0;
   display: flex;
