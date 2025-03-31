@@ -1,6 +1,5 @@
-import { FaRegSmile } from "react-icons/fa";
 import "../styles/MainPage.css";
-
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="navbar">
