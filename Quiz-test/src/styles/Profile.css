@@ -1,6 +1,6 @@
 /* Globalne style */
-  /* Pasek nawigacyjny */
-  .navbar {
+/* Pasek nawigacyjny */
+.navbar {
     background-color: #353535;
     color: white;
     padding: 15px 0;
@@ -91,4 +91,3 @@
   .category-button:hover {
     background-color: #284B63;
   }
-  

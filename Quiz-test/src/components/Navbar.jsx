@@ -7,12 +7,15 @@ function Navbar() {
   const handleProfileClick = () => {
     navigate("/profile");
   };
+  const handleLeaderboardClick = () => {
+    navigate("/leaderboard");
+  };
 
   return (
     <nav className="navbar">
       <div className="nav-buttons">
         <button>Strona Główna</button>
-        <button>Ranking</button>
+        <button onClick={handleLeaderboardClick}>Ranking</button>
         <button onClick={handleProfileClick}>Mój Profil</button>
         <button>Wyloguj się</button>
       </div>

@@ -1,0 +1,41 @@
+.leaderboard-container {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: center;
+  }
+  
+  .leaderboard-container h1 {
+    margin-bottom: 20px;
+    color: #3c6e71;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .player-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  
+  .player-rank {
+    font-weight: bold;
+    color: #284b63;
+  }
+  
+  .player-name {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 10px;
+  }
+  
+  .player-score {
+    color: #3c6e71;
+  }
