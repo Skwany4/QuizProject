@@ -3,3 +3,11 @@ https://coolors.co/edafb8-f7e1d7-dedbd2-b0c4b1-4a5759
 https://coolors.co/palette/353535-3c6e71-ffffff-d9d9d9-284b63
 
 Z{E#j&>H<N17xV`inN25U~fV(/oTK/
+
+
+{
+  "id": 2,
+  "name": "Mathematics",
+  "description": "A category about mathematical topics.",
+  "img": "mathematics.png"
+}
