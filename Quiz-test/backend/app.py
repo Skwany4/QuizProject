@@ -11,7 +11,13 @@ app = Flask(__name__)
 app.secret_key = "Z{E#j&>H<N17xV`inN25U~fV(/oTK/"
 
 # CORS configuration to allow cookies
-CORS(app, supports_credentials=True)
+CORS(
+    app,
+    supports_credentials=True,
+    origins=["http://localhost:5173"],
+    allow_headers=["Content-Type", "Authorization"]
+)
+
 
 # Session configuration for client-side sessions
 app.config['SESSION_COOKIE_SECURE'] = False  # Set to True in production (requires HTTPS)
@@ -70,20 +76,23 @@ def logout():
 @app.route('/profile', methods=['GET'])
 def profile():
     if 'user_id' not in session:
-        return jsonify({"message": "Unauthorized"}), 401  # User not logged in
+        return jsonify({"message": "Unauthorized"}), 401
     
     user_id = session['user_id']
     connection = create_connection()
     cursor = connection.cursor()
+    # Get only username and email from your current schema
     cursor.execute("SELECT username, email FROM users WHERE id = %s", (user_id,))
     user = cursor.fetchone()
     cursor.close()
     connection.close()
 
     if user:
-        return jsonify({"username": user[0], "email": user[1]}), 200
+        return jsonify({
+            "username": user[0],
+            "email": user[1]
+        }), 200
     else:
         return jsonify({"message": "User not found"}), 404
-
 if __name__ == '__main__':
     app.run(debug=True)
