@@ -32,7 +32,7 @@ function CategoryGrid() {
     <div className="grid-container">
       {categories.map((category) => (
         <div key={category.id} className="category-card">
-          <img src={`/public/${category.img}`} alt={category.name} />
+          <img src={`/${category.img}`} alt={category.name} />
           <button onClick={() => handleCategoryClick(category)} className="category-button">
             {category.name}
           </button>

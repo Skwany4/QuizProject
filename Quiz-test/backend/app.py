@@ -57,9 +57,5 @@ def login():
     else:
         return jsonify({"message": "Invalid credentials"}), 401
 
-@app.route('/logout', methods=['POST'])
-def logout():
-    return jsonify({"message": "Logged out successfully"}), 200
-
 if __name__ == '__main__':
     app.run(debug=True)
