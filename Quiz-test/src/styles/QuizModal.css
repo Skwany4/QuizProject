@@ -1,0 +1,48 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .start-quiz-button, .close-button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .start-quiz-button {
+    background-color: #3C6E71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .start-quiz-button:hover {
+    background-color: #284B63;
+  }
+  
+  .close-button {
+    background-color: #ddd;
+    color: black;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  .close-button:hover {
+    background-color: #bbb;
+  }
