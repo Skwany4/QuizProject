@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import MainPage from "./pages/MainPage";
 import Profile from "./pages/Profile";
 import Leaderboard from "./pages/leaderboard";
+import QuizGame from './pages/QuizGame';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/Main" element={<MainPage />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/quiz/:categoryId" element={<QuizGame />} />
       </Routes>
     </Router>
   );
