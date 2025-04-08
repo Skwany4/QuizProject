@@ -1,12 +1,22 @@
 from flask import Flask, request, jsonify, session
 from flask_cors import CORS
+from datetime import timedelta
 import mysql.connector
 from mysql.connector import Error
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key"  # Replace with a strong secret key
-CORS(app, resources={r"/*": {"origins": "*"}})
+
+# Use a strong secret key for signing cookies
+app.secret_key = "Z{E#j&>H<N17xV`inN25U~fV(/oTK/"
+
+# CORS configuration to allow cookies
+CORS(app, supports_credentials=True)
+
+# Session configuration for client-side sessions
+app.config['SESSION_COOKIE_SECURE'] = False  # Set to True in production (requires HTTPS)
+app.config['SESSION_COOKIE_SAMESITE'] = "Lax"  # Prevent CSRF attacks
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)  # Set session lifetime to 30 minutes
 
 def create_connection():
     connection = None
@@ -47,6 +57,7 @@ def login():
     if user and check_password_hash(user[3], password):
         session['user_id'] = user[0]  # Store user ID in session
         session['username'] = user[1]  # Store username in session
+        session.permanent = True  # Enable session expiration
         return jsonify({"message": "Login successful", "user": user[1]}), 200
     else:
         return jsonify({"message": "Invalid credentials"}), 401
@@ -55,6 +66,24 @@ def login():
 def logout():
     session.clear()  # Clear session data
     return jsonify({"message": "Logged out successfully"}), 200
+
+@app.route('/profile', methods=['GET'])
+def profile():
+    if 'user_id' not in session:
+        return jsonify({"message": "Unauthorized"}), 401  # User not logged in
+    
+    user_id = session['user_id']
+    connection = create_connection()
+    cursor = connection.cursor()
+    cursor.execute("SELECT username, email FROM users WHERE id = %s", (user_id,))
+    user = cursor.fetchone()
+    cursor.close()
+    connection.close()
+
+    if user:
+        return jsonify({"username": user[0], "email": user[1]}), 200
+    else:
+        return jsonify({"message": "User not found"}), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
