@@ -11,3 +11,17 @@ Z{E#j&>H<N17xV`inN25U~fV(/oTK/
   "description": "A category about mathematical topics.",
   "img": "mathematics.png"
 }
+
+
+
+{
+  "category_id": 1,
+  "question": "Question 1",
+  "answers": [
+    "Answer A",
+    "Answer B",
+    "Answer C",
+    "Answer D"
+  ],
+  "correct_index": 1
+}

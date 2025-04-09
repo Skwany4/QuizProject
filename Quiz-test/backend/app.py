@@ -53,10 +53,21 @@ def get_categories():
     categories = list(db["categories"].find({}, {"_id": 0}))
     return jsonify(categories), 200
 
+
 @app.route('/questions/<int:category_id>', methods=['GET'])
 def get_questions(category_id):
-    questions = list(db["questions"].find({"category_id": category_id}, {"_id": 0}))
+    # Get 5 random questions with correct field names
+    questions = list(db["questions"].aggregate([
+        {"$match": {"category_id": category_id}},
+        {"$sample": {"size": 5}},
+        {"$project": {
+            "_id": 0,
+            "category_id": 1,
+            "question": 1,
+            "answers": 1,
+            "correct_index": 1
+        }}
+    ]))
     return jsonify(questions), 200
-
 if __name__ == '__main__':
     app.run(debug=True)
