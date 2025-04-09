@@ -15,7 +15,6 @@ function QuizGame() {
 
   const currentQuestionIndexRef = useRef(currentQuestionIndex);
   const questionsRef = useRef(questions);
-  const selectedAnswerRef = useRef(selectedAnswer);
   const isProcessingAnswerRef = useRef(isProcessingAnswer);
 
   useEffect(() => {
@@ -23,10 +22,6 @@ function QuizGame() {
     questionsRef.current = questions;
     isProcessingAnswerRef.current = isProcessingAnswer;
   }, [currentQuestionIndex, questions, isProcessingAnswer]);
-
-  useEffect(() => {
-    selectedAnswerRef.current = selectedAnswer;
-  }, [selectedAnswer]);
 
   const handleAnswerClick = useCallback((selectedIndex) => {
     if (isProcessingAnswerRef.current) return;
