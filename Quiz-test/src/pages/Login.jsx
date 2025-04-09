@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie';
 import "../styles/auth.css";
 
 function Login() {
@@ -17,7 +18,8 @@ function Login() {
         password,
       });
       if (response.status === 200) {
-        // Redirect to main page or dashboard
+        // Store the JWT token in a cookie
+        Cookies.set('access_token', response.data.access_token, { expires: 7 }); // Expires in 7 days
         navigate("/main");
       }
     } catch {

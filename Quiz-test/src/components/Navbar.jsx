@@ -1,18 +1,16 @@
 import "../styles/MainPage.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-function Navbar() {
+import Cookies from 'js-cookie';
 
+function Navbar() {
   const navigate = useNavigate();
 
-  const handleLogout = async () => {
-    try {
-      await axios.post("http://localhost:5000/logout"); // Call the logout endpoint
-      navigate("/login"); // Redirect to login page
-    } catch (error) {
-      console.error("Logout failed", error);
-    }
+  const handleLogout = () => {
+    // Remove the JWT token from cookies
+    Cookies.remove('access_token');
+    navigate("/login");
   };
+
   return (
     <nav className="navbar">
       <div className="nav-buttons">

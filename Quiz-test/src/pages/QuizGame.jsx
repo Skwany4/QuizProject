@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import Cookies from 'js-cookie';
 import '../styles/QuizGame.css';
 
 function QuizGame() {
@@ -66,7 +68,29 @@ function QuizGame() {
       .finally(() => setLoading(false));
   }, [categoryId, navigate]);
 
-  const handleReturnHome = () => {
+  const submitScore = async () => {
+    try {
+      const token = Cookies.get('access_token');
+      if (!token) {
+        console.error('No token found');
+        return;
+      }
+      await axios.post('http://localhost:5000/submit_score', 
+        { correct_answers: score },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+      console.log('Score submitted successfully');
+    } catch (error) {
+      console.error('Error submitting score:', error);
+    }
+  };
+
+  const handleReturnHome = async () => {
+    await submitScore();
     navigate('/main');
   };
 
