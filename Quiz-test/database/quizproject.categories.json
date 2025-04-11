@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "67f5a70e04ccf2b7d3fcf003"
+  },
+  "id": 1,
+  "name": "Matematyka",
+  "description": "Sprawdź swoją wiedzę i umiejętności rozwiązywania problemów matematycznych, od podstawowych zagadnień po bardziej zaawansowane wyzwania.",
+  "img": "mathematic.png"
+},
+{
+  "_id": {
+    "$oid": "67f5ad0204ccf2b7d3fcf00f"
+  },
+  "id": 2,
+  "name": "Język polski",
+  "description": "Sprawdź swoją wiedzę na temat zasad języka polskiego, gramatyki i poprawnej pisowni..",
+  "img": "polish.png"
+},
+{
+  "_id": {
+    "$oid": "67f935ddf94f62b82bd6d9c0"
+  },
+  "id": 3,
+  "name": "Fizyka",
+  "description": "Sprawdź swoją wiedzę o zjawiskach przyrody, zasadach dynamiki i podstawach elektrotechniki oraz termodynamiki.",
+  "img": "physic.png"
+},
+{
+  "_id": {
+    "$oid": "67f93812f94f62b82bd6d9d8"
+  },
+  "id": 4,
+  "name": "Informatyka",
+  "description": "Sprawdź swoją wiedzę z zakresu technologii komputerowych, programowania, sieci oraz systemów operacyjnych.",
+  "img": "it.png"
+},
+{
+  "_id": {
+    "$oid": "67f93db8f94f62b82bd6d9e0"
+  },
+  "id": 5,
+  "name": "Biologia",
+  "description": "Poznaj tajniki życia, odkrywając fascynujący świat roślin, zwierząt oraz procesów biologicznych zachodzących w przyrodzie.",
+  "img": "bio.png"
+},
+{
+  "_id": {
+    "$oid": "67f93e45f94f62b82bd6d9e2"
+  },
+  "id": 6,
+  "name": "Angielski",
+  "description": "Sprawdź swoją znajomość języka angielskiego – od gramatyki i słownictwa po praktyczne zastosowania w codziennej komunikacji.",
+  "img": "ang.png"
+},
+{
+  "_id": {
+    "$oid": "67f93ecdf94f62b82bd6d9e4"
+  },
+  "id": 7,
+  "name": "Historia",
+  "description": "Przenieś się w czasie, odkrywając kluczowe wydarzenia, postaci i okresy, które ukształtowały nasz świat.",
+  "img": "history.png"
+},
+{
+  "_id": {
+    "$oid": "67f93f46f94f62b82bd6d9e6"
+  },
+  "id": 8,
+  "name": "Filmy",
+  "description": "Testuj swoje umiejętności filmowe, odkrywając zarówno kultowe klasyki, jak i najnowsze hity kinowe oraz ciekawostki ze świata kinematografii.",
+  "img": "film.png"
+},
+{
+  "_id": {
+    "$oid": "67f93feef94f62b82bd6d9e9"
+  },
+  "id": 9,
+  "name": "Gry",
+  "description": "Sprawdź swoją wiedzę o grach – od klasycznych tytułów po najnowsze premiery, zgłębiając tajniki świata wirtualnej rozrywki.",
+  "img": "games.png"
+}]

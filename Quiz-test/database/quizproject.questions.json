@@ -1,0 +1,420 @@
+[{
+  "_id": {
+    "$oid": "67f92c0bf94f62b82bd6d989"
+  },
+  "category_id": 1,
+  "question": "Ile wynosi suma kątów wewnętrznych trójkąta?",
+  "answers": [
+    "90°",
+    "180°",
+    "360°",
+    "270°"
+  ],
+  "correct_index": 1
+},
+{
+  "_id": {
+    "$oid": "67f92c60f94f62b82bd6d98c"
+  },
+  "category_id": 1,
+  "question": "Która z poniższych liczb jest liczbą pierwszą?",
+  "answers": [
+    "4",
+    "6",
+    "7",
+    "9"
+  ],
+  "correct_index": 2
+},
+{
+  "_id": {
+    "$oid": "67f92c84f94f62b82bd6d98e"
+  },
+  "category_id": 1,
+  "question": "Ile wynosi pierwiastek kwadratowy z 144",
+  "answers": [
+    "10",
+    "11",
+    "12",
+    "13"
+  ],
+  "correct_index": 2
+},
+{
+  "_id": {
+    "$oid": "67f92ca7f94f62b82bd6d990"
+  },
+  "category_id": 1,
+  "question": " Rozwiąż równanie: 2x + 5 = 17",
+  "answers": [
+    "5",
+    "6",
+    "7",
+    "8"
+  ],
+  "correct_index": 1
+},
+{
+  "_id": {
+    "$oid": "67f92cd1f94f62b82bd6d992"
+  },
+  "category_id": 1,
+  "question": "Oblicz pole koła o promieniu 3 (przyjmując π ≈ 3,14)",
+  "answers": [
+    "28,26",
+    "31,40",
+    "18,84",
+    "25,12"
+  ],
+  "correct_index": 0
+},
+{
+  "_id": {
+    "$oid": "67f92cf7f94f62b82bd6d994"
+  },
+  "category_id": 1,
+  "question": "Jaka jest wartość wyrażenia: 3² - 4·2 + 8?",
+  "answers": [
+    "9",
+    "10",
+    "11",
+    "12"
+  ],
+  "correct_index": 0
+},
+{
+  "_id": {
+    "$oid": "67f92d20f94f62b82bd6d996"
+  },
+  "category_id": 1,
+  "question": "Które z poniższych równań jest równaniem liniowym?",
+  "answers": [
+    "2x + 3 = 7",
+    "x² - 4 = 0",
+    "3ˣ = 9",
+    "x³ + 1 = 0"
+  ],
+  "correct_index": 0
+},
+{
+  "_id": {
+    "$oid": "67f92d48f94f62b82bd6d998"
+  },
+  "category_id": 1,
+  "question": "Jaka jest pochodna funkcji f(x) = 3x²?",
+  "answers": [
+    "6x",
+    "3x",
+    "9x",
+    "6"
+  ],
+  "correct_index": 0
+},
+{
+  "_id": {
+    "$oid": "67f92d66f94f62b82bd6d99a"
+  },
+  "category_id": 1,
+  "question": "Oblicz sumę ciągu arytmetycznego: 2, 5, 8, 11, 14",
+  "answers": [
+    "40",
+    "39",
+    "38",
+    "36"
+  ],
+  "correct_index": 0
+},
+{
+  "_id": {
+    "$oid": "67f92d98f94f62b82bd6d99c"
+  },
+  "category_id": 1,
+  "question": "Które z poniższych równań opisuje okrąg o promieniu r i środku w punkcie (a, b)?",
+  "answers": [
+    "(x - a)² + (y - b)² = r",
+    "(x - a)² + (y - b)² = r²",
+    "(x - a) + (y - b) = r²",
+    "(x - a)² - (y - b)² = r²"
+  ],
+  "correct_index": 1
+},
+{
+  "_id": {
+    "$oid": "67f92ec3f94f62b82bd6d9a2"
+  },
+  "category_id": 2,
+  "question": "Czym jest zdanie?",
+  "answers": [
+    "Najmniejsza jednostka słowna",
+    "Ciąg słów tworzący pełną myśl",
+    "Wyłącznie zbiór wyrazów bez sensu",
+    "Pojedynczy wyraz"
+  ],
+  "correct_index": 1
+},
+{
+  "_id": {
+    "$oid": "67f931dbf94f62b82bd6d9a4"
+  },
+  "category_id": 2,
+  "question": "Który z poniższych wyrazów jest rzeczownikiem?",
+  "answers": [
+    "biega",
+    "miłość",
+    "pięknie",
+    "szybko"
+  ],
+  "correct_index": 1
+},
+{
+  "_id": {
+    "$oid": "67f93414f94f62b82bd6d9ad"
+  },
+  "category_id": 2,
+  "question": "Który wyraz pełni funkcję przymiotnika?",
+  "answers": [
+    "piękny",
+    "biegnie",
+    "myśl",
+    "szybko"
+  ],
+  "correct_index": 0
+},
+{
+  "_id": {
+    "$oid": "67f93437f94f62b82bd6d9af"
+  },
+  "category_id": 2,
+  "question": "Co to jest fraza?",
+  "answers": [
+    "Pojedynczy wyraz",
+    "Wielowyrazowe wyrażenie o określonym znaczeniu",
+    "Zbiór zdań",
+    "Rodzaj wykrzyknienia"
+  ],
+  "correct_index": 1
+},
+{
+  "_id": {
+    "$oid": "67f9346df94f62b82bd6d9b1"
+  },
+  "category_id": 2,
+  "question": "Co oznacza pojęcie 'ortografia'?",
+  "answers": [
+    "Poprawną wymowę wyrazów",
+    "Zasady pisowni",
+    "Strukturę zdań",
+    "Interpunkcję"
+  ],
+  "correct_index": 1
+},
+{
+  "_id": {
+    "$oid": "67f9348ff94f62b82bd6d9b3"
+  },
+  "category_id": 2,
+  "question": "Jaką funkcję pełni przecinek w zdaniu?",
+  "answers": [
+    "Oddziela zdania składowe",
+    "Kończy zdanie",
+    "Zastępuje spójnik",
+    "Zmienia znaczenie wyrazów"
+  ],
+  "correct_index": 0
+},
+{
+  "_id": {
+    "$oid": "67f934b5f94f62b82bd6d9b5"
+  },
+  "category_id": 2,
+  "question": "Która z poniższych form zapisu jest poprawna?",
+  "answers": [
+    "spiewak",
+    "śpiewak",
+    "szpiewak",
+    "śpiewack"
+  ],
+  "correct_index": 1
+},
+{
+  "_id": {
+    "$oid": "67f934e0f94f62b82bd6d9b7"
+  },
+  "category_id": 2,
+  "question": "Czym różni się partykuła od spójnika?",
+  "answers": [
+    "Partykuła dodaje emocji, natomiast spójnik łączy zdania lub ich części",
+    "Spójnik dodaje emocji, natomiast partykuła łączy zdania",
+    "Partykuła występuje tylko w zdaniach pytających",
+    "Spójnik występuje tylko w zdaniach rozkazujących"
+  ],
+  "correct_index": 0
+},
+{
+  "_id": {
+    "$oid": "67f93500f94f62b82bd6d9b9"
+  },
+  "category_id": 2,
+  "question": "Czym zajmuje się morfologia?",
+  "answers": [
+    "Nauką o dźwiękach",
+    "Nauką o budowie słowa",
+    "Nauką o zdaniach",
+    "Nauką o tekście"
+  ],
+  "correct_index": 1
+},
+{
+  "_id": {
+    "$oid": "67f9351ef94f62b82bd6d9bb"
+  },
+  "category_id": 2,
+  "question": "Które z poniższych wyrazów pochodzi z języka obcego?",
+  "answers": [
+    "komputer",
+    "książka",
+    "drzewo",
+    "stół"
+  ],
+  "correct_index": 0
+},
+{
+  "_id": {
+    "$oid": "67f93615f94f62b82bd6d9c3"
+  },
+  "category_id": 3,
+  "question": " Co mówi pierwsza zasada dynamiki Newtona (zasada bezwładności)?",
+  "answers": [
+    "Ciało porusza się zawsze z tą samą prędkością",
+    "Siła działająca na ciało jest równa iloczynowi masy i przyspieszenia",
+    "Ciało zmienia swój stan ruchu, gdy na nie działa jakakolwiek siła",
+    "Ciało pozostaje w spoczynku lub w ruchu jednostajnym, jeśli nie działa na nie siła zewnętrzna"
+  ],
+  "correct_index": 3
+},
+{
+  "_id": {
+    "$oid": "67f9363cf94f62b82bd6d9c5"
+  },
+  "category_id": 3,
+  "question": " Jaką jednostką jest newton?",
+  "answers": [
+    "kg/m",
+    "kg·m",
+    "kg·m/s²",
+    "m/s"
+  ],
+  "correct_index": 2
+},
+{
+  "_id": {
+    "$oid": "67f93661f94f62b82bd6d9c7"
+  },
+  "category_id": 3,
+  "question": "Czym jest energia kinetyczna?",
+  "answers": [
+    "Energia zgromadzona w ciele w wyniku jego położenia",
+    "nergia przekazywana w postaci ciepła",
+    "Energia potencjalna związana z grawitacją",
+    "Energia związana z ruchem ciała"
+  ],
+  "correct_index": 3
+},
+{
+  "_id": {
+    "$oid": "67f9368bf94f62b82bd6d9c9"
+  },
+  "category_id": 3,
+  "question": " Które z poniższych równań opisuje drogę w ruchu jednostajnie przyspieszonym?",
+  "answers": [
+    "s = v·t",
+    "s = a·t",
+    "s = v₀·t + 0.5·a·t²",
+    "s = v₀ + a·t²"
+  ],
+  "correct_index": 2
+},
+{
+  "_id": {
+    "$oid": "67f936bbf94f62b82bd6d9cb"
+  },
+  "category_id": 3,
+  "question": "Jakie prawo łączy ciepło, masę, zmianę temperatury i ciepło właściwe?",
+  "answers": [
+    "Prawo Coulomba",
+    "Prawo Ohma",
+    "Prawo Archimedesa",
+    "Równanie: Q = m·c·ΔT"
+  ],
+  "correct_index": 3
+},
+{
+  "_id": {
+    "$oid": "67f936e9f94f62b82bd6d9cd"
+  },
+  "category_id": 3,
+  "question": "Jak nazywa się zjawisko, w którym światło zmienia kierunek przechodząc między ośrodkami?",
+  "answers": [
+    "Załamanie",
+    "Dyfrakcja",
+    "Interferencja",
+    "Rozproszenie"
+  ],
+  "correct_index": 0
+},
+{
+  "_id": {
+    "$oid": "67f93716f94f62b82bd6d9cf"
+  },
+  "category_id": 3,
+  "question": "Co opisuje drugie prawo termodynamiki?",
+  "answers": [
+    "Całkowita energia układu jest stała",
+    "Procesy termodynamiczne zachodzą tak, że entropia izolowanego układu wzrasta",
+    "Ciepło przepływa od zimnego do ciepłego ciała",
+    "Energia nie może być stworzona ani zniszczona"
+  ],
+  "correct_index": 1
+},
+{
+  "_id": {
+    "$oid": "67f93740f94f62b82bd6d9d1"
+  },
+  "category_id": 3,
+  "question": "Która z poniższych wielkości jest bezwymiarowa?",
+  "answers": [
+    "Współczynnik tarcia",
+    "Masa",
+    "Prędkość",
+    "Przyspieszenie"
+  ],
+  "correct_index": 0
+},
+{
+  "_id": {
+    "$oid": "67f93770f94f62b82bd6d9d3"
+  },
+  "category_id": 3,
+  "question": "Co opisuje prawo Kirchhoffa w obwodach elektrycznych?",
+  "answers": [
+    "Prawo zachowania ładunku i energii",
+    "Prawo zachowania energii mechanicznej",
+    "Prawo zachowania masy",
+    "Prawo zachowania pędu"
+  ],
+  "correct_index": 0
+},
+{
+  "_id": {
+    "$oid": "67f9379ff94f62b82bd6d9d5"
+  },
+  "category_id": 3,
+  "question": "Jak nazywa się zjawisko, w którym drgania dwóch ciał o zbliżonych częstotliwościach powodują okresowe zmiany amplitudy?",
+  "answers": [
+    "Polaryzacja",
+    "Bicie",
+    "Interferencja",
+    "Dyfrakcja"
+  ],
+  "correct_index": 1
+}]
