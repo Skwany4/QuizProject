@@ -14,6 +14,7 @@ function QuizGame() {
   const [loading, setLoading] = useState(true);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isProcessingAnswer, setIsProcessingAnswer] = useState(false);
+  const [timeElapsed, setTimeElapsed] = useState(0);
 
   const currentQuestionIndexRef = useRef(currentQuestionIndex);
   const questionsRef = useRef(questions);
@@ -24,6 +25,15 @@ function QuizGame() {
     questionsRef.current = questions;
     isProcessingAnswerRef.current = isProcessingAnswer;
   }, [currentQuestionIndex, questions, isProcessingAnswer]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (!gameEnded) {
+        setTimeElapsed(prev => prev + 1);
+      }
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [gameEnded]);
 
   const handleAnswerClick = useCallback((selectedIndex) => {
     if (isProcessingAnswerRef.current) return;
@@ -101,9 +111,9 @@ function QuizGame() {
   if (gameEnded) {
     return (
       <div className="result-modal">
-        <h2>Game Over!</h2>
-        <p>Your score: {score}/{questions.length}</p>
-        <button onClick={handleReturnHome}>Return to Home</button>
+        <h2>Koniec!</h2>
+        <p>Wynik: {score}/{questions.length}</p>
+        <button onClick={handleReturnHome}>Powrót do strony głównej</button>
       </div>
     );
   }
@@ -111,45 +121,47 @@ function QuizGame() {
   const currentQuestion = questions[currentQuestionIndex];
 
   return (
+    
     <div className="quiz-game-container">
-      {currentQuestion && (
-        <>
-          <div className="progress-bars">
-            <div className="progress-container">
-              <div 
-                className="progress-bar question-progress"
-                style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}
-              ></div>
-              <div className="progress-text">
-                Question {currentQuestionIndex + 1} of {questions.length}
-              </div>
-            </div>
-          </div>
+      <div className="timer">
+        Czas rozgrywki: {Math.floor(timeElapsed / 60).toString().padStart(2, '0')}:
+        {(timeElapsed % 60).toString().padStart(2, '0')}
+      </div>
 
-          <div className="question-description">
-            {currentQuestion.question}
+      <div className="progress-bars"><br /><br />
+        <div className="progress-container">
+          <div 
+            className="progress-bar question-progress"
+            style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}
+          ></div>
+          <div className="progress-text">
+            Pytanie {currentQuestionIndex + 1} z {questions.length}
           </div>
+        </div>
+      </div>
 
-          <div className="answers-container">
-            {currentQuestion.answers.map((answer, index) => (
-              <button
-                key={index}
-                className={`answer-button ${
-                  selectedAnswer !== null && 
-                  (index === currentQuestion.correct_index ? 'correct' : 
-                  (index === selectedAnswer ? 'incorrect' : ''))
-                }`}
-                onClick={() => handleAnswerClick(index)}
-                disabled={selectedAnswer !== null || isProcessingAnswer}
-              >
-                {answer}
-              </button>
-            ))}
-          </div>
+      <div className="question-description">
+        {currentQuestion.question}
+      </div>
 
-          <div className="current-score">Current Score: {score}</div>
-        </>
-      )}
+      <div className="answers-container">
+        {currentQuestion.answers.map((answer, index) => (
+          <button
+            key={index}
+            className={`answer-button ${
+              selectedAnswer !== null && 
+              (index === currentQuestion.correct_index ? 'correct' : 
+              (index === selectedAnswer ? 'incorrect' : ''))
+            }`}
+            onClick={() => handleAnswerClick(index)}
+            disabled={selectedAnswer !== null || isProcessingAnswer}
+          >
+            {answer}
+          </button>
+        ))}
+      </div>
+
+      <div className="current-score">Wynik: {score}</div>
     </div>
   );
 }
