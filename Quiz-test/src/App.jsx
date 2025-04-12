@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import MainPage from "./pages/MainPage";
 import QuizGame from './pages/QuizGame';
 import Ranking from "./pages/Ranking";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/Main" element={<MainPage />} />
         <Route path="/quiz/:categoryId" element={<QuizGame />} />
         <Route path="/ranking" element={<Ranking />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   );

@@ -108,6 +108,49 @@ def get_ranking():
     top_users = list(users_collection.find({}, {"_id": 0, "username": 1, "points": 1}).sort("points", -1).limit(10))
     return jsonify(top_users), 200
 
+@app.route('/user', methods=['GET'])
+@jwt_required()
+def get_user_info():
+    username = get_jwt_identity()  # Get the username from the JWT token
+    user = users_collection.find_one({"username": username}, {"_id": 0, "password": 0})  # Exclude sensitive fields like password
+    if user:
+        return jsonify(user), 200
+    else:
+        return jsonify({"message": "User not found"}), 404
+    
+@app.route('/user/edit', methods=['POST'])
+@jwt_required()
+def edit_user_info():
+    username = get_jwt_identity()  # Get the current user's username from the JWT token
+    data = request.json  # Get the data sent in the request body
+
+    # Validate input
+    new_username = data.get('username')
+    new_email = data.get('email')
+    new_password = data.get('password')
+
+    if not any([new_username, new_email, new_password]):
+        return jsonify({"message": "No fields to update"}), 400
+
+    # Prepare the update fields
+    update_fields = {}
+    if new_username:
+        update_fields['username'] = new_username
+    if new_email:
+        update_fields['email'] = new_email
+    if new_password:
+        update_fields['password'] = generate_password_hash(new_password, method='pbkdf2:sha256')
+
+    # Update user information in the database
+    result = users_collection.update_one(
+        {"username": username},  # Match the current user
+        {"$set": update_fields}  # Update the fields
+    )
+
+    if result.modified_count > 0:
+        return jsonify({"message": "User information updated successfully"}), 200
+    else:
+        return jsonify({"message": "No changes made or user not found"}), 400    
     
 if __name__ == '__main__':
     app.run(debug=True)

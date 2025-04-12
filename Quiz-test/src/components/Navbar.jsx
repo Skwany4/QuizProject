@@ -16,7 +16,7 @@ function Navbar() {
       <div className="nav-buttons">
         <button>Strona Główna</button>
         <button onClick={() => navigate("/ranking")}>Ranking</button>
-        <button>Mój Profil</button>
+        <button onClick={() => navigate("/profile")}>Mój Profil</button>
         <button onClick={handleLogout}>Wyloguj się</button>
       </div>
     </nav>

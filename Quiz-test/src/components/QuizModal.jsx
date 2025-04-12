@@ -16,8 +16,8 @@ function QuizModal({ category, onClose }) {
       <div className="modal-content">
         <h2>{category.name}</h2>
         <p>{category.description}</p>
-        <button className="start-quiz-button" onClick={startCompetition}>Start Competition</button>
-        <button className="close-button" onClick={onClose}>Close</button>
+        <button className="start-quiz-button" onClick={startCompetition}>Zacznij grę</button>
+        <button className="close-button" onClick={onClose}>Zamknij</button>
       </div>
     </div>
   );

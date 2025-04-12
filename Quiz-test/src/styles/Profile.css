@@ -1,0 +1,130 @@
+/* Colors */
+:root {
+    --jet: #353535ff;
+    --caribbean-current: #3c6e71ff;
+    --white: #ffffffff;
+    --platinum: #d9d9d9ff;
+    --indigo-dye: #284b63ff;
+  }
+  
+  /* Background with gradient */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #d3d3d3;
+  }
+  
+  /* Center profile container */
+  .profile-container {
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Header styling */
+  .profile-container h1 {
+    color: var(--indigo-dye);
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+  }
+  
+  /* User information display */
+  .profile-info p {
+    font-size: 1.2rem;
+    color: var(--caribbean-current);
+    margin: 10px 0;
+    font-weight: bold;
+  }
+  
+  .profile-info strong {
+    color: var(--jet);
+  }
+  
+  /* Edit button */
+  .edit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: var(--white);
+    background-color: var(--caribbean-current);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .edit-button:hover {
+    background-color: var(--indigo-dye);
+  }
+  
+  /* Edit form styling */
+  .edit-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1rem;
+    color: var(--jet);
+  }
+  
+  .edit-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid var(--platinum);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: var(--platinum);
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form-buttons button {
+    width: 48%;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form-buttons button:first-child {
+    background-color: var(--caribbean-current);
+  }
+  
+  .form-buttons button:first-child:hover {
+    background-color: var(--indigo-dye);
+  }
+  
+  .form-buttons button:last-child {
+    background-color: var(--jet);
+  }
+  
+  .form-buttons button:last-child:hover {
+    background-color: var(--caribbean-current);
+  }
+  
+  /* Return button */
+  .return-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: var(--white);
+    background-color: var(--indigo-dye);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .return-button:hover {
+    background-color: var(--caribbean-current);
+  }
