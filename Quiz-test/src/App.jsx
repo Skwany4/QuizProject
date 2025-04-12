@@ -3,6 +3,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import MainPage from "./pages/MainPage";
 import QuizGame from './pages/QuizGame';
+import Ranking from "./pages/Ranking";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/Main" element={<MainPage />} />
         <Route path="/quiz/:categoryId" element={<QuizGame />} />
+        <Route path="/ranking" element={<Ranking />} />
       </Routes>
     </Router>
   );

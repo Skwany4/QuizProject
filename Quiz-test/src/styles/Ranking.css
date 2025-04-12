@@ -1,0 +1,60 @@
+:root {
+    --jet: #353535ff;
+    --caribbean-current: #3c6e71ff;
+    --white: #ffffffff;
+    --platinum: #d9d9d9ff;
+    --indigo-dye: #284b63ff;
+  }
+  
+  .ranking-container {
+    background-color: var(--jet);
+    color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .ranking-title {
+    font-size: 2.5rem;
+    color: var(--caribbean-current);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: var(--platinum);
+    color: var(--jet);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .ranking-table th,
+  .ranking-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--caribbean-current);
+  }
+  
+  .ranking-table th {
+    background-color: var(--indigo-dye);
+    color: var(--white);
+  }
+  
+  .ranking-table tr:nth-child(even) {
+    background-color: var(--white);
+  }
+  
+  .ranking-table tr:nth-child(odd) {
+    background-color: var(--platinum);
+  }
+  
+  .ranking-table tr:hover {
+    background-color: var(--caribbean-current);
+    color: var(--white);
+    transition: background-color 0.3s ease;
+  }

@@ -101,5 +101,13 @@ def submit_score():
     else:
         return jsonify({"message": "User not found"}), 404
 
+
+
+@app.route('/ranking', methods=['GET'])
+def get_ranking():
+    top_users = list(users_collection.find({}, {"_id": 0, "username": 1, "points": 1}).sort("points", -1).limit(10))
+    return jsonify(top_users), 200
+
+    
 if __name__ == '__main__':
     app.run(debug=True)
