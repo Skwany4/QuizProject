@@ -41,7 +41,7 @@ function Ranking() { // Komponent do wyświetlania rankingu użytkowników
         <tbody>
           {ranking.map((user, index) => (
             <tr key={user.username}>
-              <td>{index + 1}</td>
+              <td>{index + 1}</td> 
               <td>{user.username}</td>
               <td>{user.points}</td>
             </tr>

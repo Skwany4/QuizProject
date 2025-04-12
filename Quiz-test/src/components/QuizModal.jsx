@@ -7,7 +7,7 @@ function QuizModal({ category, onClose }) {
 
   if (!category) return null; // Jeśli nie ma wybranej kategorii, nie renderuj modala
 
-  const startCompetition = () => {
+  const startCompetition = () => { // Funkcja do rozpoczęcia quizu
     navigate(`/quiz/${category.id}`);
   };
 
