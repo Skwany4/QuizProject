@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/auth.css";
 
-function Register() {
+function Register() { // Komponent rejestracji
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,21 +11,20 @@ function Register() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => { // Funkcja do obsługi wysyłania formularza rejestracji
     e.preventDefault();
     if (password !== confirmPassword) {
-      setError("Passwords do not match");
+      setError("Hałsła się nie zgadzają"); // Sprawdzenie, czy hasła się zgadzają
       return;
     }
     try {
-      const response = await axios.post("http://localhost:5000/register", {
+      const response = await axios.post("http://localhost:5000/register", { // Wysłanie danych rejestracji do serwera
         username,
         email,
         password,
       });
       if (response.status === 201) {
-        // Redirect to login page
-        navigate("/login");
+        navigate("/login"); // przekierowanie do strony logowania po udanej rejestracji
       }
     } catch {
       setError("Registration failed");

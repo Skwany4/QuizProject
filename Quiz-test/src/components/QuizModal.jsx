@@ -5,7 +5,7 @@ import '../styles/QuizModal.css';
 function QuizModal({ category, onClose }) {
   const navigate = useNavigate();
 
-  if (!category) return null;
+  if (!category) return null; // Jeśli nie ma wybranej kategorii, nie renderuj modala
 
   const startCompetition = () => {
     navigate(`/quiz/${category.id}`);

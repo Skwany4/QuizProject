@@ -1,36 +1,38 @@
+// importowanie bibliotek, komponentów i stylów
 import React, { useState, useEffect } from "react";
 import "../styles/Profile.css";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 
+// stworzenie komponentu Profile
 function Profile() {
-  const [userData, setUserData] = useState({
+  const [userData, setUserData] = useState({ // Stan do przechowywania danych użytkownika
     username: "",
     email: "",
     points: 0,
     date_of_creation: "",
   });
-  const [isEditing, setIsEditing] = useState(false);
-  const [formData, setFormData] = useState({
+  const [isEditing, setIsEditing] = useState(false); // Stan do przechowywania informacji o edytowaniu profilu
+  const [formData, setFormData] = useState({ // Stan do przechowywania danych formularza
     username: "",
     email: "",
     password: "",
   });
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook do nawigacji
 
-  useEffect(() => {
-    const token = Cookies.get("access_token");
-    if (!token) {
+  useEffect(() => { // Pobranie danych użytkownika po załadowaniu komponentu
+    const token = Cookies.get("access_token"); // Sprawdzenie, czy token istnieje
+    if (!token) { // Jeśli nie ma tokena, przekieruj do strony logowania
       navigate("/login");
       return;
     }
 
-    fetch("http://localhost:5000/user", {
+    fetch("http://localhost:5000/user", { // Pobranie danych użytkownika
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`, // Dodanie tokena do nagłówków
       },
     })
-      .then((res) => {
+      .then((res) => { // Sprawdzenie odpowiedzi serwera
         if (res.status === 401) {
           navigate("/login");
         } else if (!res.ok) {
@@ -38,30 +40,30 @@ function Profile() {
         }
         return res.json();
       })
-      .then((data) => {
+      .then((data) => { // Ustawienie danych użytkownika w stanie
         setUserData({
           username: data.username,
           email: data.email,
           points: data.points,
           date_of_creation: new Date(data.date_of_creation).toLocaleDateString(),
         });
-        setFormData({ username: data.username, email: data.email, password: "" });
+        setFormData({ username: data.username, email: data.email, password: "" }); // Ustawienie danych formularza na podstawie danych użytkownika
       })
       .catch((err) => {
         console.error("Error fetching user data:", err);
       });
   }, [navigate]);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e) => { // Funkcja do obsługi zmiany danych w formularzu
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleEditToggle = () => {
+  const handleEditToggle = () => { // Funkcja do przełączania trybu edycji
     setIsEditing((prev) => !prev);
   };
 
-  const handleSave = () => {
+  const handleSave = () => { // Funkcja do zapisywania zmian w formularzu
     const token = Cookies.get("access_token");
     fetch("http://localhost:5000/user/edit", {
       method: "POST",
@@ -69,7 +71,7 @@ function Profile() {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(formData), // Wysłanie danych formularza do serwera
     })
       .then((res) => {
         if (!res.ok) {
@@ -77,7 +79,7 @@ function Profile() {
         }
         return res.json();
       })
-      .then((data) => {
+      .then((data) => { // Sprawdzenie odpowiedzi serwera
         if (data.message === "User information updated successfully") {
           alert("User information updated successfully!");
           setUserData((prevData) => ({
@@ -95,10 +97,10 @@ function Profile() {
       });
   };
 
-  const handleReturnToMain = () => {
+  const handleReturnToMain = () => { // Funkcja do powrotu do strony głównej
     navigate("/Main");
   };
-
+// Renderowanie komponentu
   return (
     <div className="profile-container">
       <h1>Mój Profil</h1>

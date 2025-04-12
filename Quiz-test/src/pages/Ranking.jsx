@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
-import "../styles/Ranking.css"; // New CSS file for styling
-
-function Ranking() {
+import "../styles/Ranking.css";
+function Ranking() { // Komponent do wyświetlania rankingu użytkowników
   const [ranking, setRanking] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  useEffect(() => { // Pobranie danych rankingu z serwera
     const fetchRanking = async () => {
       try {
-        const response = await fetch("http://localhost:5000/ranking");
+        const response = await fetch("http://localhost:5000/ranking"); // Pobranie danych rankingu
         if (!response.ok) {
           throw new Error("Failed to fetch ranking");
         }
-        const data = await response.json();
+        const data = await response.json(); // Przetworzenie odpowiedzi na JSON
         setRanking(data);
       } catch (err) {
         setError(err.message);
@@ -22,11 +21,11 @@ function Ranking() {
       }
     };
 
-    fetchRanking();
+    fetchRanking(); // Wywołanie funkcji do pobrania danych rankingu
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) return <p>Ładowanie...</p>;
+  if (error) return <p>Błąd: {error}</p>;
 
   return (
     <div className="ranking-container">
