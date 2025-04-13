@@ -114,7 +114,7 @@ function QuizGame() {
     return (
       <div className="result-modal">
         <h2>Koniec!</h2>
-        <p>Wynik: {score}/{questions.length}</p>
+        <p class="modal-p">Wynik: {score}/{questions.length}</p>
         <button onClick={handleReturnHome}>Powrót do strony głównej</button>
       </div>
     );
